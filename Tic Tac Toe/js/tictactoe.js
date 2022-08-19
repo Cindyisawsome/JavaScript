@@ -159,9 +159,9 @@ function drawWinLine (coordX1, coordY1,coordX2,coordY2) {
         //This line indicates where the end of a lines y axis is.
         y2 = coordY2,
         //This variable stores temporary x axis date we update in our animation loop.
-        x = xl;
+        x = x1;
         //This variable stores temporary y axis date we update in our animation loop.
-        y = yl;
+        y = y1;
     //This function interacts with the canvas
     function animateLineDrawing()  {
         //This variable creates the loop for when the game ends it restarts.
@@ -173,7 +173,7 @@ function drawWinLine (coordX1, coordY1,coordX2,coordY2) {
         //This method moves ues to a starting point for our line.
         c.moveTo(x1,y1);
         //This method indicates the end point in our line.
-        c.linetTo(x,y);
+        c.lineTo(x,y);
         //This method set the width of our line.
         c.lineWidth = 10;
         //This method sets the color of our line.
@@ -191,7 +191,7 @@ function drawWinLine (coordX1, coordY1,coordX2,coordY2) {
         }
         //This condition is similar to the one above.
         //It was necessary for the 6,4,2 win condition.
-        if (xl <= x2 && y1 >= y2)  {
+        if (x1 <= x2 && y1 >= y2)  {
             if (x < x2) {x += 10; }
             if (y > y2) {y -= 10; }
             if (x >= x2 && y <=y2)  {cancelAnimationFrame(animationLoop); }
