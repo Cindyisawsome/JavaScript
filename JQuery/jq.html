@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    </head>
+<body>
+    <script>
+        $(document).ready(function(){
+            $("html").append (
+                "<body>\
+                    <div id='container'>\
+                        <div id='inner'>\
+                            <h1>Basic jQuary</h1>\
+                            <p id='1'>Paragraph 1</p>\
+                            <p id='2'>Paragraph 2</p>\
+                            <p id='3'>Paragraph 3</p>\
+                        </div>\
+                    </div>\
+                    <div id='Next steps'>\
+                            <h2>The next step<h2>\
+                            <p id='4'>Step1</p>\
+                            <p id='5'>Step2</p>\
+                            <p hidden id='6'>step3</p>\
+                    </div>\
+                    <div class='LookAtMe'>\
+                        <p strong>LOOK AT ME!</P>\
+                    </div>\
+                </body>"
+            );
+            $("#2").css({"color":"red"});
+            $("h1").click(function(){
+                $('h1').hide(1000);
+            });
+            $('#1').click(function(){
+                $('h1').show(1000);
+            });
+            $("#2").click(function(){
+                $('#2').fadeOut(800);
+            });
+            $("#3").click(function(){
+                $('#4').hide();
+            });
+            $("#5").click(function(){
+                $('#4').fadeIn(800);
+            });
+            $("#6").fadeIn(800,function(){
+                $(this).slideUp();
+            });
+            
+        });
+        
+            
+    </script>
+</body>
+</html>
